@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css">
+    <title>じゃんけん</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>じゃんけん</h1>
+    </header>
+
+    <main>
+        <ul>
+            <button id="gu_btn">グー</button>
+            <button id="cho_btn">チョキ</button>
+            <button id="par_btn">パー</button>
+
+        </ul>
+        <div>コンピュータの出した手は？<span id="pc_hands"></span></div>
+        <div id="judgment"></div>
+    </main>
+
+    <footer></footer>
+    <script>
+    $("#gu_btn").on("click",function(){
+        const r = Math.ceil( Math.random()*3 );
+        let view = "";
+        if(r==1){
+            view = '👊';
+        }
+        if(r==2){
+            view = '✌️';
+        }
+        if(r==3){
+            view = '✋';
+        }
+        $("#pc_hands").html(view);
+
+    // $("#cho_btn").on("click",function(){
+    //     const r = Math.ceil( Math.random()*3);
+    //     let view = "";
+    //     if(r==1){
+    //         view = 'グー';
+    //     }
+    //     if(r==2){
+    //         view = 'チョキ';
+    //     }
+    //     if(r==3){
+    //         view = 'パー';
+    //     }
+    // // // 表示処理
+    //     $("#pc_hands").html(view);
+
+    });
+    </script>
+</body>
+
+</html>
